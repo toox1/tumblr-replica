@@ -5,10 +5,29 @@
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag 'application', 'https://fonts.googleapis.com/css?family=Raleway:400,700' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= favicon_link_tag 'favicon.ico' %>
   </head>
 
   <body>
+
+    
+      <%= link_to "Tumblr", root_path %><br>
+
+      <%= link_to "nuevo", new_post_path %>
+
+  
+  
+
+	<% flash.each do |name, msg| %>
+	<%= content_tag(:div, msg, class: "alert") %>
+
+          
+     
+	<% end %>
+
     <%= yield %>
+  
   </body>
 </html>
