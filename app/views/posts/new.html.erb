@@ -1,27 +1,2 @@
 	<h1>Make something</h1>
-	<%= form_for :post, url: posts_path do |f|%>
-	<% if @post.errors.any?%>
-		<h2>
-			<%= pluralize(@post.errors.count, "error") %> stopped this post from saving
-			<ul> 
-			<% @post.errors.full_messages.each do |msg| %>
-				<li>
-					<%= msg %>
-				</li>
-				<% end %>
-			</ul>
-		</h2>
-	<% end %>
-	<h2>
-		<%= f.label :title %><br>
-		<%= f.text_field :title%>
-	</h2>
-
-	<p>
-		<%= f.label :body %><br>
-		<%= f.text_area :body %>
-	</p>
-	<br>
-		<%= f.submit %>
-
-		<% end %>
+	<%= render 'form' %>
